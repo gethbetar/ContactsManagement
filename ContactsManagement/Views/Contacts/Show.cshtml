@@ -1,0 +1,86 @@
+﻿@model Contact
+
+@{
+    ViewBag.Title = "Contact Show";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h1>Show Contact</h1>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input asp-for="FirstName" class="form-control" disabled="disabled" placeholder="First Name">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input asp-for="LastName" class="form-control" disabled="disabled" placeholder="Last Name">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input asp-for="Email" class="form-control" disabled="disabled" placeholder="Email">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <input asp-for="Phone" class="form-control" disabled="disabled" placeholder="Phone">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-phone"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <textarea asp-for="Address" class="form-control" disabled="disabled" placeholder="Address"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-footer">
+        <div class="float-right">
+            <a asp-action="Update"
+               asp-route-id="@Model.Id"
+               class="btn btn-primary"><i class="fas fa-edit"></i></a>
+            <a asp-action="Delete"
+               asp-route-id="@Model.Id"
+               class="btn btn-danger m-1"><i class="fas fa-trash"></i></a>
+        </div>
+        <a asp-action="List"
+           class="btn btn btn-default"><i class="fas fa-times"></i></a>
+
+    </div>
+</div>
